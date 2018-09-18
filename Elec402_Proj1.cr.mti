@@ -1,0 +1,8 @@
+/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/CountUp+tb.sv {1 {vlog -work work -vopt -sv -stats=none /ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/CountUp+tb.sv
+Model Technology ModelSim SE-64 vlog 10.7 Compiler 2017.12 Dec  6 2017
+-- Compiling module Countup_tb
+
+Top level modules:
+	Countup_tb
+
+} {} {}}
