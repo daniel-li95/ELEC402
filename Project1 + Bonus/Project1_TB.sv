@@ -1,15 +1,17 @@
 // Student Name: Daniel Li
 // Student Number: 50995133
-// Function: Counts up
+// Function:  Tests the Project 1 Blender
 
-module Countup_tb;
-logic [7:0] out_tb;
-logic enable_tb, clk_tb, reset_tb;
-up_counter u8(
+module P1Blender_tb;
+logic [1:0] out_tb;
+logic  clk_tb, reset_tb;
+logic [3:0] BlendMode;
+
+P1Blender Testblend(
 .out (out_tb),
-.enable (enable_tb),
 .clk (clk_tb),
 .reset (reset_tb)
+.Mode (Blendmode)
 );
 // Initialize the testbench
 initial begin

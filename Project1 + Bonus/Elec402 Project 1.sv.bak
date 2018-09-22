@@ -4,7 +4,7 @@
 module P1Blender(
 input logic clk,
 input logic reset,
-input logic [3:0] Mode,
+input logic [4:0] Mode,
 output logic [1:0] y); // Same setup as module doesn't change
 
 typedef enum logic [3:0] {

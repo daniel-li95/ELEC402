@@ -1,0 +1,60 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133
+vdivideby3FSM50Duty
+Z0 DXx6 sv_std 3 std 0 22 >9az<^>2ff9DAl3OFGaAf1
+!s110 1537386002
+!i10b 1
+!s100 6SGT>FfNYXTELo5f?EJ[B1
+IM^k:SnR0<^mhj3W@Q_UN32
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 !s105 Elec40220Project201_sv_unit
+S1
+Z3 d/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/Project1 + Bonus
+w1537385996
+Z4 8/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/Project1 + Bonus/Elec402 Project 1.sv
+Z5 F/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/Project1 + Bonus/Elec402 Project 1.sv
+L0 4
+Z6 OL;L;10.7a;67
+r1
+!s85 0
+31
+!s108 1537386002.000000
+!s107 /ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/Project1 + Bonus/Elec402 Project 1.sv|
+Z7 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/Project1 + Bonus/Elec402 Project 1.sv|
+!i113 0
+Z8 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 tCvgOpt 0
+ndivideby3@f@s@m50@duty
+vP1Blender
+R0
+!s110 1537386287
+!i10b 1
+!s100 OcdN;87;R0c4A]iRm38Hz1
+I[m0:jDLQLao4ULkGaQhTC3
+R1
+R2
+S1
+R3
+w1537386285
+R4
+R5
+L0 4
+R6
+r1
+!s85 0
+31
+!s108 1537386287.000000
+Z10 !s107 /ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/Project1 + Bonus/Elec402 Project 1.sv|
+R7
+!i113 0
+R8
+R9
+n@p1@blender
