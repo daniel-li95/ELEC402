@@ -1,0 +1,23 @@
+# Cadence Encounter(R) RTL Compiler
+#   version RC14.13 - v14.10-s027_1 (64-bit) built Nov 17 2014
+#
+# Run with the following arguments:
+#   -logfile rc.log
+#   -cmdfile rc.cmd
+
+include load_etc.tcl
+set SYN_EFF medium
+set DESIGN P1Blender
+set MAP_EFF medium
+set SYN_PATH "."
+PDKDIR $::env(PDKDIR)
+set PDKDIR $::env(PDKDIR)
+set_attribute lib_search_path /CMC/kits/AMSKIT616_GPDK/tech/gsclib045_all_v4.4/gsclib045/timing
+tribute library ( slow_vddiv
+tribute library ( slow_vddiv
+set_attribute library {slow_vdd1v0_basicCells.lib} 
+elaborate $DESIGN
+.
+SYN_PATH
+set SYN_PATH "."
+read_hdl -sv ./Elec402_Project1

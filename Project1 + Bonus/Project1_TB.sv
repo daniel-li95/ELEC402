@@ -8,33 +8,29 @@ logic  clk_tb, reset_tb;
 logic [3:0] BlendMode;
 
 P1Blender Testblend(
-.out (out_tb),
+.y (out_tb),
 .clk (clk_tb),
-.reset (reset_tb)
-.Mode (Blendmode)
+.reset (reset_tb),
+.Mode (BlendMode)
 );
 // Initialize the testbench
 initial begin
 clk_tb = 0;
 reset_tb = 1;
-enable_tb = 0;
+BlendMode = 0;
 end
 initial begin 
 #15 reset_tb = 0;
-enable_tb = 1;
 end
 
 always 
 begin
-#10 clk_tb = ~clk_tb;
+#10 clk_tb = ~clk_tb; // The clock cycle being an order of magnitude faster than the mode change allows for it to cycle through every state at least twice.
 end
-integer file_out;
-initial begin
-file_out = $fopen("up_counter.txt", "wb");
-$fstrobe(file_out, "time\tclk\treset\tenable\tout");
-end
-always @(posedge clk_tb)
+
+always
 begin 
-$fstrobe(file_out, "%3d\t%b\t%b\t%b\t%d", $time, clk_tb, reset_tb, enable_tb, out_tb);
-end
+#400 BlendMode = BlendMode +1; // The counting up of the mode allows for the cycling through the modes, with modes between 0111 and 1101 having no output.
+end 
+
 endmodule

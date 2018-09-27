@@ -1,8 +1,1 @@
-{/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/Project1 + Bonus/Elec402 Project 1.sv} {1 {vlog -work work -vopt -sv -stats=none {/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/Project1 + Bonus/Elec402 Project 1.sv}
-Model Technology ModelSim SE-64 vlog 10.7a Compiler 2018.03 Mar 26 2018
--- Compiling module P1Blender
 
-Top level modules:
-	P1Blender
-
-} {} {}}
