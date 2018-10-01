@@ -1,8 +1,16 @@
 v6d9
 zxcV12#4bnM
 
+
 VPN server: myvpn.ubc.ca
+
 Username: your CWL username
+
 Password: your CWL password
 
+
+
+
 To use x2go on home computers
+
+server name: ssh-soc.ece.ubc.ca

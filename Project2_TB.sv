@@ -1,13 +1,14 @@
 // Student Name: Daniel Li
 // Student Number: 50995133
-// Function:  Tests the Project 1 Blender
+// Function:  Tests the Project 2 Blender
 
-module P1Blender_tb;
+`timescale 1ns/1ps // unit step = 1ns and 1ps is resolution
+module P2Blender_tb;
 logic [1:0] out_tb;
 logic  clk_tb, reset_tb;
-logic [3:0] BlendMode;
+logic [4:0] BlendMode;
 
-P1Blender Testblend(
+P2Blender Testblend(
 .y (out_tb),
 .clk (clk_tb),
 .reset (reset_tb),
@@ -30,7 +31,7 @@ end
 
 always
 begin 
-#400 BlendMode = BlendMode +1; // The counting up of the mode allows for the cycling through the modes, with modes between 0111 and 1101 having no output.
+#400 BlendMode = BlendMode +1; // The counting up of the mode allows for the cycling through the modes
 end 
 
 endmodule

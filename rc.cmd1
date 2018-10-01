@@ -21,3 +21,4 @@ elaborate $DESIGN
 SYN_PATH
 set SYN_PATH "."
 read_hdl -sv ./Elec402_Project1
+q

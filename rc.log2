@@ -1,13 +1,13 @@
-Checking out license 'RTL_Compiler_Ultra'... (1 second elapsed)
+Checking out license 'RTL_Compiler_Ultra'... (2 seconds elapsed)
 License 'RTL_Compiler_Ultra' checkout failed.
 Checking out license 'RTL_Compiler_Physical'... (1 second elapsed)
 License 'RTL_Compiler_Physical' checkout failed.
-Checking out license 'RTL_Compiler_Verification'... (2 seconds elapsed)
+Checking out license 'RTL_Compiler_Verification'... (1 second elapsed)
 License 'RTL_Compiler_Verification' checkout failed.
-Checking out license 'RTL_Compiler_L'... (1 second elapsed)
+Checking out license 'RTL_Compiler_L'... (2 seconds elapsed)
 License 'RTL_Compiler_L' checkout failed.
-Checking out license 'Virtuoso_Digital_Implem'... (1 second elapsed)
-Finished loading tool scripts (6 seconds elapsed)
+Checking out license 'Virtuoso_Digital_Implem'... (0 seconds elapsed)
+Finished loading tool scripts (7 seconds elapsed)
 
                        Cadence Encounter(R) RTL Compiler
           Version RC14.13 - v14.10-s027_1 (64-bit), built Nov 17 2014
@@ -121,60 +121,4 @@ called '~/.cadence/.synth_init'.
 Send us feedback at rc_feedback@cadence.com.
 ================================================================================
 
-rc:/> include load_etc.tcl
-Sourcing '/CMC/tools/cadence/RC14.13.000_lnx86/tools/lib/etc/load_etc.tcl' (Thu Sep 27 13:16:29 -0700 2018)...
-Sourcing '/CMC/tools/cadence/RC14.13.000_lnx86/tools/lib/etc/toolbox/insert_io_buffers.tcl' (Thu Sep 27 13:16:29 -0700 2018)...
-Sourcing '/CMC/tools/cadence/RC14.13.000_lnx86/tools/lib/etc/toolbox/performance_statistics.tcl' (Thu Sep 27 13:16:29 -0700 2018)...
-rc:/> set SYN_EFF medium
-medium
-rc:/> set DESIGN P1Blender
-P1Blender
-rc:/> set MAP_EFF medium
-medium
-rc:/> set SYN_PATH "."
-.
-rc:/> PDKDIR $::env(PDKDIR)
-invalid command name "PDKDIR"
-rc:/> set PDKDIR $::env(PDKDIR)
-/CMC/kits/AMSKIT616_GPDK/tech
-rc:/> set_attribute lib_search_path /CMC/kits/AMSKIT616_GPDK/tech/gsclib045_all_v4.4/gsclib045/timing
-  Setting attribute of root '/': 'lib_search_path' = /CMC/kits/AMSKIT616_GPDK/tech/gsclib045_all_v4.4/gsclib045/timing
-rc:/> tribute library ( slow_vddiv
-invalid command name "tribute"
-rc:/> tribute library ( slow_vddiv
-invalid command name "tribute"
-rc:/> set_attribute library {slow_vdd1v0_basicCells.lib} 
-Info    : Created nominal operating condition. [LBR-412]
-        : Operating condition '_nominal_' was created for the PVT values (1.000000, 0.900000, 125.000000) in library 'slow_vdd1v0_basicCells.lib'.
-        : The nominal operating condition represents either the nominal PVT values if specified in the library source, or the default PVT values (1.0, 1.0, 1.0).
-
-  Message Summary for Library slow_vdd1v0_basicCells.lib:
-  *******************************************************
-  An unsupported construct was detected in this library. [LBR-40]: 2
-  Found 'statetable' group in cell. [LBR-83]: 16
-  Created nominal operating condition. [LBR-412]: 1
-  *******************************************************
- 
-  Setting attribute of root '/': 'library' = slow_vdd1v0_basicCells.lib
-rc:/> elaborate $DESIGN
-  Library has 324 usable logic and 128 usable sequential lib-cells.
-Info    : Found unusable library cells. [LBR-415]
-        : Library: 'slow_vdd1v0_basicCells.lib', Total cells: 489, Unusable cells: 19.
-	List of unusable cells: 'ANTENNA HOLDX1 TLATNSRX1 TLATNSRX2 TLATNSRX4 TLATNSRXL TLATSRX1 TLATSRX2 TLATSRX4 TLATSRXL ... and others.'
-        : For more information, refer to 'Cells Identified as Unusable' in the RC User Guide. The number of unusable cells that is listed depends on the setting of the 'information_level' root attribute. If set to a value less than 6, the list is limited to 10 unusable cells. If set to a value equal to or higher than 6, all unusable cells are listed.
-Error   : Could not find an HDL design. [CDFG-210] [elaborate]
-        : The design is 'P1Blender'.
-        : Ensure that the design exists or the correct file was loaded.
-1
-rc:/> .
-wrong # args: should be ". option ?arg arg ...?"
-rc:/> SYN_PATH
-invalid command name "SYN_PATH"
-rc:/> set SYN_PATH "."
-.
-rc:/> read_hdl -sv ./Elec402_Project1
-Error   : Cannot open file. [VLOGPT-650] [read_hdl]
-        : File './Elec402_Project1'.
-        : The specified file could not be opened.  Check the value of the hdl_search_path attribute.
-1
 rc:/> q
