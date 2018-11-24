@@ -1,0 +1,13 @@
+
+// Library name: ELEC402
+// Cell name: NAND3TESTBENCH
+// View name: schematic
+I0 (V2_PLUS V3_PLUS V1_PLUS 0 I0_OUTPUT V0_PLUS) NAND3
+V0 (V0_PLUS 0) vsource dc=1 type=dc
+V3 (V3_PLUS 0) vsource type=pulse val0=0 val1=1 period=2*T rise=0.1*T \
+        fall=0.1*T
+V2 (V2_PLUS 0) vsource type=pulse val0=0 val1=1 period=4*T rise=0.1*T \
+        fall=0.1*T
+V1 (V1_PLUS 0) vsource type=pulse val0=0 val1=1 period=1*T rise=0.1*T \
+        fall=0.1*T
+C0 (0 I0_OUTPUT) capacitor c=10f

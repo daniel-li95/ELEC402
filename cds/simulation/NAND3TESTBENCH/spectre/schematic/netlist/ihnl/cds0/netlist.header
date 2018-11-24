@@ -1,0 +1,5 @@
+
+// Library name: ELEC402
+// Cell name: NAND3
+// View name: schematic
+subckt NAND3 A B C GND OUTPUT VDD

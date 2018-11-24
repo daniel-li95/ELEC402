@@ -1,0 +1,5 @@
+
+// Library name: ELEC402
+// Cell name: Question2bA3
+// View name: schematic
+subckt Question2bA3 A B C D GND OUTPUT VDD

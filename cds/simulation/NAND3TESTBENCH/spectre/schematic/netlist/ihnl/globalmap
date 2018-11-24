@@ -1,0 +1,11 @@
+CADENCE IHNL01070
+$model
+ELEC402/NAND3TESTBENCH/schematic NAND3TESTBENCH
+ELEC402/NAND3/schematic NAND3
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+T T
+$endparam

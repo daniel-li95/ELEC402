@@ -15,3 +15,4 @@ INCLUDE $PDKDIR/gpdk045/cds.lib
 INCLUDE $PDKDIR/gsclib045/cds.lib
 INCLUDE $PDKDIR/giolib045/cds.lib
 #------------------------------------------ User libraries start here:
+DEFINE ELEC402 /ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/cds/ELEC402

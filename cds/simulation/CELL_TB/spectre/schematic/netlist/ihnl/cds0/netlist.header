@@ -1,0 +1,5 @@
+
+// Library name: ELEC402
+// Cell name: NMOS_PMOS_transistor
+// View name: schematic
+subckt NMOS_PMOS_transistor GND IN OUT VDD

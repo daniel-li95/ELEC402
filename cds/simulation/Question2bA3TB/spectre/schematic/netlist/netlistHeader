@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: Nov  4 20:23:23 2018
+// Design library name: ELEC402
+// Design cell name: Question2bA3TB
+// Design view name: schematic
+simulator lang=spectre
+global 0

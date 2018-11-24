@@ -1,0 +1,28 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "Question2bA3TB"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/cds/simulation/Question2bA3TB/spectre/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+( "gnd!" "0" )
+ )
+( inst
+ )
+( model
+( "ELEC402/Question2bA3TB/schematic" "Question2bA3TB" )
+( "ELEC402/Question2bA3/schematic" "Question2bA3" )
+ )
+( term
+ )
+( param
+ )
+( "Question2bA3" "ihnl/cds0/map" )
+( "Question2bA3TB" "ihnl/cds1/map" )
+ )

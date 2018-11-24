@@ -1,0 +1,22 @@
+
+// Library name: ELEC402
+// Cell name: NMOS_PMOS_transistor
+// View name: schematic
+subckt NMOS_PMOS_transistor GND IN OUT VDD
+    PM0 (OUT IN VDD VDD) g45p1svt w=(240n) l=45n nf=1 as=33.6f ad=33.6f \
+        ps=760n pd=760n nrd=583.333m nrs=583.333m sa=140n sb=140n sd=160n \
+        sca=151.92744 scb=0.10471 scc=0.01874 m=(1)
+    NM0 (OUT IN GND GND) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+ends NMOS_PMOS_transistor
+// End of subcircuit definition.
+
+// Library name: ELEC402
+// Cell name: CELL_TB
+// View name: schematic
+V0 (V0_PLUS 0) vsource dc=vdd type=dc
+C0 (I14_OUT 0) capacitor c=2f
+I14 (0 V1_PLUS I14_OUT V0_PLUS) NMOS_PMOS_transistor
+V1 (V1_PLUS 0) vsource type=pulse val0=0 val1=vdd period=T rise=0.1*T \
+        fall=0.1*T

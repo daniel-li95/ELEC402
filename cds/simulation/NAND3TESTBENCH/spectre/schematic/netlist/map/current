@@ -1,0 +1,28 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "NAND3TESTBENCH"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/cds/simulation/NAND3TESTBENCH/spectre/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+( "gnd!" "0" )
+ )
+( inst
+ )
+( model
+( "ELEC402/NAND3/schematic" "NAND3" )
+( "ELEC402/NAND3TESTBENCH/schematic" "NAND3TESTBENCH" )
+ )
+( term
+ )
+( param
+ )
+( "NAND3TESTBENCH" "ihnl/cds1/map" )
+( "NAND3" "ihnl/cds0/map" )
+ )

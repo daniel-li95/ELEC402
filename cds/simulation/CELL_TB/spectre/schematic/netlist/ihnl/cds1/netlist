@@ -1,0 +1,9 @@
+
+// Library name: ELEC402
+// Cell name: CELL_TB
+// View name: schematic
+V0 (V0_PLUS 0) vsource dc=vdd type=dc
+C0 (I14_OUT 0) capacitor c=2f
+I14 (0 V1_PLUS I14_OUT V0_PLUS) NMOS_PMOS_transistor
+V1 (V1_PLUS 0) vsource type=pulse val0=0 val1=vdd period=T rise=0.1*T \
+        fall=0.1*T

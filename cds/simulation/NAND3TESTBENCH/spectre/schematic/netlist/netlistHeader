@@ -1,0 +1,7 @@
+// Generated for: spectre
+// Generated on: Nov  4 23:22:48 2018
+// Design library name: ELEC402
+// Design cell name: NAND3TESTBENCH
+// Design view name: schematic
+simulator lang=spectre
+global 0

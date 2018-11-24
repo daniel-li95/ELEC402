@@ -11,3 +11,38 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
+# Loading project Project2Test
+# Compile of Project2_TBOriginal.sv was successful.
+# Compile of Elec402_Project2.sv was successful.
+# Compile of Elec402_Project1.sv was successful.
+# Compile of Project1_TB.sv was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -voptargs=+acc work.P1Blender_tb
+# vsim -voptargs="+acc" work.P1Blender_tb 
+# Start time: 00:29:27 on Oct 01,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "P1Blender(fast)".
+# Loading sv_std.std
+# Loading work.P1Blender_tb(fast)
+# Loading work.P1Blender(fast)
+vsim -voptargs=+acc work.P3Blender_tb
+# End time: 00:29:40 on Oct 01,2018, Elapsed time: 0:00:13
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.P3Blender_tb 
+# Start time: 00:29:40 on Oct 01,2018
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "P3Blender(fast)".
+# Loading sv_std.std
+# Loading work.P3Blender_tb(fast)
+# Loading work.P3Blender(fast)
+add wave -position insertpoint  \
+sim:/P3Blender_tb/out_tb \
+sim:/P3Blender_tb/clk_tb \
+sim:/P3Blender_tb/reset_tb \
+sim:/P3Blender_tb/BlendMode
+add wave -position insertpoint  \
+sim:/P3Blender_tb/TestblendP2/state
+run 2000ns
+run 13000ns
+# End time: 21:13:45 on Oct 14,2018, Elapsed time: 332:44:05
+# Errors: 0, Warnings: 0

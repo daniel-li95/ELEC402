@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      v6d9
+HostName                       ssh-soc.ece.ubc.ca
+ProcessIdentifier              52421
+ProcessCreationTime_UTC        1539577073
+ProcessCreationTime_Readable   Sun Oct 14 21:17:53 2018 PDT
+AppIdentifier                  /CMC/tools/cadence/IC06.16.090_lnx86/tools/dfII/bin/64bit/virtuoso
+OSType                         lnx86
+ReasonForPlacingEditLock       Set lock by hiiLockFile
+FilePathUsedToEditLock         /ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/cds/Mylog
+TimeEditLocked                 Sun Oct 14 21:17:53 2018 PDT

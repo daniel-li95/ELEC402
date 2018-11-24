@@ -1,0 +1,13 @@
+CADENCE IHNL01070
+$model
+ELEC402/Question2bA3TB/schematic Question2bA3TB
+ELEC402/Question2bA3/schematic Question2bA3
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+vdd vdd
+VDD VDD
+T T
+$endparam

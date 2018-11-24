@@ -1,0 +1,12 @@
+CADENCE IHNL01070
+$model
+ELEC402/CELL_TB/schematic CELL_TB
+ELEC402/NMOS_PMOS_transistor/schematic NMOS_PMOS_transistor
+$endmodel
+$net
+gnd! 0
+$endnet
+$param
+vdd vdd
+T T
+$endparam

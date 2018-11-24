@@ -1,0 +1,28 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "CELL_TB"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "gnd!"
+  hierDelim "."
+  netlistDir "/ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/cds/simulation/CELL_TB/spectre/schematic/netlist"
+ )
+( instViewTable
+ )
+( net
+( "gnd!" "0" )
+ )
+( inst
+ )
+( model
+( "ELEC402/CELL_TB/schematic" "CELL_TB" )
+( "ELEC402/NMOS_PMOS_transistor/schematic" "NMOS_PMOS_transistor" )
+ )
+( term
+ )
+( param
+ )
+( "CELL_TB" "ihnl/cds1/map" )
+( "NMOS_PMOS_transistor" "ihnl/cds0/map" )
+ )
