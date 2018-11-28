@@ -1,0 +1,849 @@
+#######################################################
+#                                                     
+#  Encounter Command Logging File                     
+#  Created on Fri Nov 23 23:42:39 2018                
+#                                                     
+#######################################################
+
+#@(#)CDS: Encounter v14.13-s036_1 (64bit) 08/14/2014 18:19 (Linux 2.6)
+#@(#)CDS: NanoRoute v14.13-s019 NR140805-0429/14_13-UB (database version 2.30, 237.6.1) {superthreading v1.19}
+#@(#)CDS: CeltIC v14.13-s013_1 (64bit) 08/14/2014 12:47:36 (Linux 2.6.18-194.el5)
+#@(#)CDS: AAE 14.13-s010 (64bit) 08/14/2014 (Linux 2.6.18-194.el5)
+#@(#)CDS: CTE 14.13-s011_1 (64bit) Aug 14 2014 10:00:19 (Linux 2.6.18-194.el5)
+#@(#)CDS: CPE v14.13-s029
+#@(#)CDS: IQRC/TQRC 13.2.0-s451 (64bit) Tue Jul 22 19:06:40 PDT 2014 (Linux 2.6.18-194.el5)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getVersion
+win
+set ::DelayCal::esigUseVDC 1
+set ::TimeLib::tsgMarkCellLatchConstructFlag 1
+set conf_qxconf_file NULL
+set conf_qxlib_file NULL
+set defHierChar /
+set gpsPrivate::dpgNewAddBufsDBUpdate 1
+set gpsPrivate::lsgEnableNewDbApiInRestruct 1
+set init_gnd_net VSS
+set init_lef_file {in/gsclib045_macro.lef in/gsclib045_multibitsDFF.lef in/gsclib045_tech.lef}
+set init_mmmc_file in/MMMC.tcl
+set init_pwr_net VDD
+set init_top_cell TopBlender
+set init_verilog in/P2Blender_map.v
+set lsgOCPGainMult 1.000000
+set pegDefaultResScaleFactor 1.000000
+set pegDetailResScaleFactor 1.000000
+set timing_library_float_precision_tol 0.000010
+set timing_library_load_pin_cap_indices {}
+save_global Default.globals
+set init_lef_file {in/gsclib045_tech.lef in/gsclib045_macro.lef in/gsclib045_multibitsDFF.lef}
+set init_top_cell P2Blender
+init_design
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site CoreSite -r 0.930727362692 0.699924 0.0 0.0 0.0 0.0
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -r 0.769230769231 0.699955 0.0 0.0 0.0 0.0
+uiSetTool select
+getIoFlowFlag
+fit
+saveDesign P2Blender.enc
+set sprCreateIeRingNets {}
+set sprCreateIeRingLayers {}
+set sprCreateIeRingWidth 1.0
+set sprCreateIeRingSpacing 1.0
+set sprCreateIeRingOffset 1.0
+set sprCreateIeRingThreshold 1.0
+set sprCreateIeRingJogDistance 1.0
+addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -type core_rings -jog_distance 0.6 -threshold 0.6 -nets {VDD VSS} -follow core -stacked_via_bottom_layer Metal1 -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 0.22 -spacing 0.2 -offset 0.6
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1 Metal11 } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1 Metal11 } -nets { VDD VSS } -allowLayerChange 1 -blockPin useLef -targetViaLayerRange { Metal1 Metal11 }
+set sprCreateIeStripeNets {}
+set sprCreateIeStripeLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeSpacing 2.0
+set sprCreateIeStripeThreshold 1.0
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -width 0.22 -nets {VDD VSS} -stacked_via_bottom_layer Metal1
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType start -spacing 0.2 -start 2.0 0.1 -pin clk
+set ptngSprNoRefreshPins 1
+setPtnPinStatus -cell P2Blender -pin {Mode[0]} -status unplaced -silent
+setPtnPinStatus -cell P2Blender -pin {Mode[1]} -status unplaced -silent
+setPtnPinStatus -cell P2Blender -pin {Mode[2]} -status unplaced -silent
+setPtnPinStatus -cell P2Blender -pin {Mode[3]} -status unplaced -silent
+setPtnPinStatus -cell P2Blender -pin {Mode[4]} -status unplaced -silent
+set ptngSprNoRefreshPins 0
+ptnSprRefreshPinsAndBlockages
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -spreadDirection clockwise -side Left -layer 1 -spreadType range -start 0.0 0.0 -end 0.0 0.0 -pin {{Mode[0]} {Mode[1]} {Mode[2]} {Mode[3]} {Mode[4]}}
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Inside -layer 4 -assign 0.0 0.0 -pin reset
+set ptngSprNoRefreshPins 1
+setPtnPinStatus -cell P2Blender -pin reset -status unplaced -silent
+set ptngSprNoRefreshPins 0
+ptnSprRefreshPinsAndBlockages
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Inside -layer 3 -assign 0.0 0.0 -pin reset
+set ptngSprNoRefreshPins 1
+setPtnPinStatus -cell P2Blender -pin reset -status unplaced -silent
+set ptngSprNoRefreshPins 0
+ptnSprRefreshPinsAndBlockages
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 1 -spreadType start -spacing 1.0 -start 0.0 0.0 -pin reset
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType start -spacing 1.0 -start 0.0 0.0 -pin reset
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Top -layer 1 -spreadType start -spacing 0.2 -start 4.0 1.0 -pin {{y[0]} {y[1]}}
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Bottom -layer 1 -spreadType start -spacing 0.2 -start 0.0 0.0 -pin {{y[0]} {y[1]}}
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType start -spacing 0.2 -start 0.0 0.0 -pin {{y[0]} {y[1]}}
+setPinAssignMode -pinEditInBatch false
+editPin -pinWidth 0.06 -pinDepth 0.335 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType start -spacing 0.38 -start 0.0 0.855 -pin {{y[0]} {y[1]}}
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setNanoRouteMode -quiet -droutePostRouteWidenWireRule LEFSpecialRouteSpec
+setPlaceMode -reset
+setPlaceMode -congEffort auto -timingDriven 1 -modulePlan 1 -clkGateAware 1 -powerDriven 0 -ignoreScan 1 -reorderScan 1 -ignoreSpare 0 -placeIOPins 0 -moduleAwareSpare 0 -checkPinLayerForAccess {  1 } -preserveRouting 0 -rmAffectedRouting 0 -checkRoute 0 -swapEEQ 0
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+windowSelect 7.615 2.133 4.572 2.628
+panCenter 2.697 4.892
+panCenter -1.053 4.521
+panCenter 6.484 5.105
+panCenter 15.896 5.619
+windowSelect 9.145 10.672 13.754 7.350
+zoomBox -1.700 15.213 -1.361 13.383
+setDrawView place
+setDrawView fplan
+setDrawView fplan
+setDrawView fplan
+setDrawView place
+setDrawView fplan
+setDrawView place
+setDrawView fplan
+setDrawView place
+setDrawView fplan
+setPlaceMode -fp false
+placeDesign -inPlaceOpt
+setPlaceMode -fp false
+placeDesign -inPlaceOpt
+panCenter 22.135 15.006
+panCenter 16.011 16.049
+panCenter 7.937 15.382
+windowSelect -0.185 16.497 -0.040 16.388
+panCenter 0.641 17.842
+panCenter 0.357 16.232
+panCenter 0.249 15.263
+panCenter 0.445 14.132
+panCenter 0.681 13.196
+panCenter 0.562 12.676
+panCenter 0.372 11.695
+setDrawView place
+panCenter -7.476 0.850
+panCenter 4.112 3.071
+panCenter 13.318 5.515
+panCenter 12.534 6.002
+panCenter 11.236 11.066
+getFillerMode -quiet
+addFiller -cell FILL8 -prefix FILLER
+panCenter 14.215 7.856
+panCenter 9.366 9.412
+setNanoRouteMode -quiet -timingEngine {}
+setNanoRouteMode -quiet -routeWithTimingDriven 1
+setNanoRouteMode -quiet -routeWithSiPostRouteFix 0
+setNanoRouteMode -quiet -drouteStartIteration default
+setNanoRouteMode -quiet -routeTopRoutingLayer default
+setNanoRouteMode -quiet -routeBottomRoutingLayer default
+setNanoRouteMode -quiet -drouteEndIteration default
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven false
+routeDesign -globalDetail
+setVerifyGeometryMode -area { 0 0 0 0 } -minWidth true -minSpacing true -minArea true -sameNet true -short true -overlap true -offRGrid false -offMGrid true -mergedMGridCheck true -minHole true -implantCheck true -minimumCut true -minStep true -viaEnclosure true -antenna false -insuffMetalOverlap true -pinInBlkg false -diffCellViol true -sameCellViol false -padFillerCellsOverlap true -routingBlkgPinOverlap true -routingCellBlkgOverlap true -regRoutingOnly false -stackedViasOnRegNet false -wireExt true -useNonDefaultSpacing false -maxWidth true -maxNonPrefLength -1 -error 1000
+verifyGeometry
+setVerifyGeometryMode -area { 0 0 0 0 }
+verifyConnectivity -type all -error 1000 -warning 50
+panCenter 3.967 8.723
+panCenter 3.642 8.530
+panCenter 2.614 8.385
+panCenter 0.835 8.598
+panCenter -1.614 8.845
+panCenter 1.322 8.882
+panCenter 4.251 8.919
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+zoomBox 0.03 16.6 1.03 17.6
+zoomBox 0.03 16.6 1.03 17.6
+zoomBox 0.03 16.6 1.03 17.6
+setLayerPreference allM1 -isVisible 0
+zoomBox 21.7 -0.5 22.7 0.5
+zoomBox 21.7 -0.5 22.7 0.5
+setLayerPreference allM1 -isVisible 1
+zoomBox 0.03 -0.5 1.03 0.5
+zoomBox 0.03 -0.5 1.03 0.5
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM2 -isVisible 0
+setLayerPreference allM2 -isVisible 1
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM1 -isVisible 1
+zoomBox 21.7 2.92 22.7 3.92
+zoomBox 21.7 2.92 22.7 3.92
+panCenter 22.259 2.969
+panCenter 22.117 1.764
+panCenter 22.198 0.670
+panCenter 22.183 -0.028
+violationBrowser -all -no_display_false
+addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -type core_rings -jog_distance 0.6 -threshold 0.6 -nets {VDD VSS} -follow core -stacked_via_bottom_layer Metal1 -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 0.22 -spacing {bottom 0.2 top 0.3 right 0.2 left 0.2} -offset 0.6
+addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -type core_rings -jog_distance 0.6 -threshold 0.6 -nets {VDD VSS} -follow core -stacked_via_bottom_layer Metal1 -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 0.22 -spacing {bottom 0.2 top 0.3 right 0.2 left 0.2} -offset 0.6
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -xleft_offset 2 -xright_offset 3 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -width 0.22 -nets {VDD VSS} -stacked_via_bottom_layer Metal1
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -xleft_offset 2 -xright_offset 3 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -width 0.22 -nets {VDD VSS} -stacked_via_bottom_layer Metal1
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -stop_x 3 -width 0.22 -nets {VDD VSS} -start_x 2 -stacked_via_bottom_layer Metal1
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -stop_x 3 -width 0.22 -nets {VDD VSS} -start_x 2 -stacked_via_bottom_layer Metal1
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1 Metal11 } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1 Metal11 } -allowLayerChange 1 -nets { VDD VSS } -blockPin useLef -targetViaLayerRange { Metal1 Metal11 }
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1 Metal11 } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1 Metal11 } -allowLayerChange 1 -nets { VDD VSS } -blockPin useLef -targetViaLayerRange { Metal1 Metal11 }
+selectWire 0.0000 -0.0600 22.2000 0.0600 1 VDD
+deselectAll
+selectWire 0.0000 -0.0600 22.2000 0.0600 1 VDD
+deselectAll
+selectWire 0.0000 -0.0600 22.2000 0.0600 1 VDD
+deselectAll
+selectMarker 22.0900 -0.0500 22.1900 0.0500 1 3 7
+deselectAll
+selectWire 0.0000 -0.0600 22.2000 0.0600 1 VDD
+deselectAll
+selectWire 0.0000 -0.0600 22.2000 0.0600 1 VDD
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1 Metal11 } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1 Metal11 } -allowLayerChange 1 -nets { VDD VSS } -blockPin useLef -targetViaLayerRange { Metal1 Metal11 }
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -type core_rings -jog_distance 0.6 -threshold 0.6 -nets {VDD VSS} -follow core -stacked_via_bottom_layer Metal1 -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 0.22 -spacing 0.2 -offset 0.6
+addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -type core_rings -jog_distance 0.6 -threshold 0.6 -nets {VDD VSS} -follow core -stacked_via_bottom_layer Metal1 -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 0.22 -spacing 0.2 -offset 0.6
+getOpCond -max
+getOpCond -max
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -xleft_offset 2 -xright_offset 3 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -width 0.22 -nets {VDD VSS} -stacked_via_bottom_layer Metal1
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -xleft_offset 2 -xright_offset 3 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -width 0.22 -nets {VDD VSS} -stacked_via_bottom_layer Metal1
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+deselectAll
+selectInst g4606
+deselectAll
+selectWire 2.4200 5.0700 2.6400 5.1900 2 VSS
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+getSrouteMode -allowWrongWayRoute -quiet
+getSrouteMode -viaThruToClosestRing -quiet
+getSrouteMode -extendNearestTarget -quiet
+getSrouteMode -targetNumber -quiet
+getSrouteMode -targetSearchDistance -quiet
+getSrouteMode -jogThresholdRatio -quiet
+getSrouteMode -blockPinConnectRingPinCorners -quiet
+getSrouteMode -blockPinRouteWithPinWidth -quiet
+getSrouteMode -padPinMinViaSize -quiet
+getSrouteMode -padPinSplit -quiet
+getSrouteMode -padRingLefConvention -quiet
+getSrouteMode -signalPinAsPG -quiet
+getSrouteMode -corePinJoinLimit -quiet
+getSrouteMode -corePinLength -quiet
+getSrouteMode -corePinLengthAsInstance -quiet
+getSrouteMode -corePinReferenceMacro -quiet
+getSrouteMode -treatEndcapAsCore -quiet
+getSrouteMode -secondaryPinMaxGap -quiet
+getSrouteMode -secondaryPinRailWidth -quiet
+getSrouteMode -srpgAonCellPin -quiet
+getSrouteMode -viaConnectToShape -quiet
+getSrouteMode -layerNormalCost -quiet
+getSrouteMode -layerWrongWayCost -quiet
+setSrouteMode -reset
+getSrouteMode -allowWrongWayRoute -quiet
+getSrouteMode -viaThruToClosestRing -quiet
+getSrouteMode -extendNearestTarget -quiet
+getSrouteMode -targetNumber -quiet
+getSrouteMode -targetSearchDistance -quiet
+getSrouteMode -jogThresholdRatio -quiet
+getSrouteMode -blockPinConnectRingPinCorners -quiet
+getSrouteMode -blockPinRouteWithPinWidth -quiet
+getSrouteMode -padPinMinViaSize -quiet
+getSrouteMode -padPinSplit -quiet
+getSrouteMode -padRingLefConvention -quiet
+getSrouteMode -signalPinAsPG -quiet
+getSrouteMode -corePinJoinLimit -quiet
+getSrouteMode -corePinLength -quiet
+getSrouteMode -corePinLengthAsInstance -quiet
+getSrouteMode -corePinReferenceMacro -quiet
+getSrouteMode -treatEndcapAsCore -quiet
+getSrouteMode -secondaryPinMaxGap -quiet
+getSrouteMode -secondaryPinRailWidth -quiet
+getSrouteMode -srpgAonCellPin -quiet
+getSrouteMode -viaConnectToShape -quiet
+getSrouteMode -layerNormalCost -quiet
+getSrouteMode -layerWrongWayCost -quiet
+setSrouteMode -allowWrongWayRoute false -viaThruToClosestRing false -extendNearestTarget false -blockPinConnectRingPinCorners false -blockPinRouteWithPinWidth false -padRingLefConvention true -signalPinAsPG false -corePinLengthAsInstance false -treatEndcapAsCore false
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1 Metal11 } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1 Metal11 } -allowLayerChange 1 -nets { VDD VSS } -blockPin useLef -targetViaLayerRange { Metal1 Metal11 }
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1 Metal11 } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1 Metal11 } -allowLayerChange 1 -nets { VDD VSS } -blockPin useLef -targetViaLayerRange { Metal1 Metal11 }
+deselectAll
+selectInst g4579
+setVerifyGeometryMode -area { 0 0 0 0 } -minWidth true -minSpacing true -minArea true -sameNet true -short true -overlap true -offRGrid false -offMGrid true -mergedMGridCheck true -minHole true -implantCheck true -minimumCut true -minStep true -viaEnclosure true -antenna false -insuffMetalOverlap true -pinInBlkg false -diffCellViol true -sameCellViol false -padFillerCellsOverlap true -routingBlkgPinOverlap true -routingCellBlkgOverlap true -regRoutingOnly false -stackedViasOnRegNet false -wireExt true -useNonDefaultSpacing false -maxWidth true -maxNonPrefLength -1 -error 1000
+verifyGeometry
+setVerifyGeometryMode -area { 0 0 0 0 }
+deselectAll
+selectInst g4606
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+zoomBox 1.535 4.685 3.04 5.69
+zoomBox 1.535 4.685 3.04 5.69
+addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -type core_rings -jog_distance 0.6 -threshold 0.6 -nets {VDD VSS} -follow core -stacked_via_bottom_layer Metal1 -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 0.22 -spacing 0.2 -offset 0.6
+addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -type core_rings -jog_distance 0.6 -threshold 0.6 -nets {VDD VSS} -follow core -stacked_via_bottom_layer Metal1 -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 0.22 -spacing 0.2 -offset 0.6
+deselectAll
+selectWire 0.4200 5.0700 2.4800 5.1900 3 VSS
+deselectAll
+selectInst g4579
+deselectAll
+selectWire 0.0000 5.0700 22.2000 5.1900 1 VSS
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+setLayerPreference allM1Cont -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM3Cont -isVisible 0
+setLayerPreference allM3 -isVisible 0
+setLayerPreference allM4Cont -isVisible 0
+setLayerPreference allM0 -isVisible 0
+setLayerPreference allM4 -isVisible 0
+setLayerPreference allM5Cont -isVisible 0
+setLayerPreference allM5 -isVisible 0
+setLayerPreference allM6Cont -isVisible 0
+setLayerPreference allM6 -isVisible 0
+setLayerPreference allM7Cont -isVisible 0
+setLayerPreference allM7 -isVisible 0
+setLayerPreference allM8Cont -isVisible 0
+setLayerPreference allM8 -isVisible 0
+setLayerPreference allM9Cont -isVisible 0
+setLayerPreference allM9 -isVisible 0
+setLayerPreference allM10Cont -isVisible 0
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+deselectAll
+selectWire 2.4200 5.0700 2.6400 5.1900 2 VSS
+deselectAll
+selectWire 2.4200 5.0700 2.6400 5.1900 2 VSS
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -xleft_offset 2 -xright_offset 3 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -width 0.22 -nets {VDD VSS} -stacked_via_bottom_layer Metal1
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1 Metal11 } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1 Metal11 } -allowLayerChange 1 -nets { VDD VSS } -blockPin useLef -targetViaLayerRange { Metal1 Metal11 }
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+setPlaceMode -fp false
+placeDesign -inPlaceOpt
+setPlaceMode -fp false
+placeDesign -inPlaceOpt
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+setLayerPreference allM0 -isVisible 1
+setLayerPreference allM1Cont -isVisible 1
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM2Cont -isVisible 1
+setLayerPreference allM3Cont -isVisible 1
+setLayerPreference allM3 -isVisible 1
+setLayerPreference allM4Cont -isVisible 1
+setLayerPreference allM4 -isVisible 1
+setLayerPreference allM5Cont -isVisible 1
+setLayerPreference allM5 -isVisible 1
+setLayerPreference allM6Cont -isVisible 1
+setLayerPreference allM6 -isVisible 1
+setLayerPreference allM7Cont -isVisible 1
+setLayerPreference allM7 -isVisible 1
+setLayerPreference allM8Cont -isVisible 1
+setLayerPreference allM8 -isVisible 1
+setLayerPreference allM9Cont -isVisible 1
+setLayerPreference allM10Cont -isVisible 1
+setLayerPreference allM9 -isVisible 1
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+windowSelect 2.578 5.167 2.447 5.066
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+zoomBox 2.03 4.58 3.13 5.68
+zoomBox 2.03 4.58 3.13 5.68
+deselectAll
+selectMarker 2.5300 5.0800 2.6300 5.1800 2 3 7
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 0.4200 5.0700 2.4800 5.1900 3 VSS
+deselectAll
+selectInst g2
+zoomBox 2.03 14.84 3.13 15.94
+zoomBox 2.03 14.84 3.13 15.94
+deleteSelectedFromFPlan
+deselectAll
+selectMarker 2.5300 15.3400 2.6300 15.4400 2 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 -0.55 22.69 0.55
+zoomBox 21.59 -0.55 22.69 0.55
+selectMarker 22.0900 -0.0500 22.1900 0.0500 1 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 1.16 22.69 2.26
+zoomBox 21.59 1.16 22.69 2.26
+selectMarker 22.0900 1.6600 22.1900 1.7600 1 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 2.87 22.69 3.97
+zoomBox 21.59 2.87 22.69 3.97
+selectWire 0.0000 3.3600 22.2000 3.4800 1 VDD
+deselectAll
+selectMarker 22.0900 3.3700 22.1900 3.4700 1 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 4.58 22.69 5.68
+zoomBox 21.59 4.58 22.69 5.68
+deleteSelectedFromFPlan
+selectMarker 22.0900 5.0800 22.1900 5.1800 1 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 6.29 22.69 7.39
+zoomBox 21.59 6.29 22.69 7.39
+selectMarker 22.0900 6.7900 22.1900 6.8900 1 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 9.71 22.69 10.81
+zoomBox 21.59 9.71 22.69 10.81
+deleteSelectedFromFPlan
+selectWire 0.0000 10.2000 22.2000 10.3200 1 VDD
+deselectAll
+selectMarker 22.0900 10.2100 22.1900 10.3100 1 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 8.0 22.69 9.1
+zoomBox 21.59 8.0 22.69 9.1
+selectMarker 22.0900 8.5000 22.1900 8.6000 1 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 13.13 22.69 14.23
+zoomBox 21.59 13.13 22.69 14.23
+selectMarker 22.0900 13.6300 22.1900 13.7300 1 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 11.42 22.69 12.52
+zoomBox 21.59 11.42 22.69 12.52
+selectWire 0.0000 11.9100 22.2000 12.0300 1 VSS
+deselectAll
+selectMarker 22.0900 11.9200 22.1900 12.0200 1 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 14.84 22.69 15.94
+zoomBox 21.59 14.84 22.69 15.94
+selectMarker 22.0900 15.3400 22.1900 15.4400 1 3 7
+deleteSelectedFromFPlan
+zoomBox 21.59 16.55 22.69 17.65
+zoomBox 21.59 16.55 22.69 17.65
+selectMarker 22.0900 17.0500 22.1900 17.1500 1 3 7
+deleteSelectedFromFPlan
+zoomBox 0.03 16.6 1.03 17.6
+zoomBox 0.03 16.6 1.03 17.6
+selectWire 0.4200 0.0000 0.6400 17.1000 2 VSS
+deselectAll
+selectWire 0.4200 0.0000 0.6400 17.1000 2 VSS
+deselectAll
+selectWire 0.0000 17.0400 22.2000 17.1600 1 VDD
+deselectAll
+selectWire 0.4200 0.0000 0.6400 17.1000 2 VSS
+zoomBox 1.535 4.685 3.04 5.69
+zoomBox 1.535 4.685 3.04 5.69
+deleteSelectedFromFPlan
+deleteSelectedFromFPlan
+selectWire 0.4200 5.0700 2.4800 5.1900 3 VSS
+deleteSelectedFromFPlan
+selectWire 2.4200 5.0700 2.6400 5.1900 2 VSS
+undo
+deselectAll
+selectWire 2.4200 5.0700 2.6400 5.1900 2 VSS
+deselectAll
+selectWire 2.4200 5.0700 2.6400 5.1900 2 VSS
+deselectAll
+selectWire 0.4200 5.0700 2.4800 5.1900 3 VSS
+deselectAll
+selectWire 0.4200 5.0700 2.4800 5.1900 3 VSS
+deselectAll
+selectWire 0.4200 5.0700 2.4800 5.1900 3 VSS
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+zoomBox 1.535 4.685 3.04 5.69
+zoomBox 1.535 4.685 3.04 5.69
+panCenter 2.425 5.159
+setLayerPreference allM2 -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM2Cont -isVisible 1
+setLayerPreference allM4Cont -isVisible 0
+setLayerPreference allM4 -isVisible 0
+setLayerPreference allM5Cont -isVisible 0
+setLayerPreference allM5 -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM1Cont -isVisible 0
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM1Cont -isVisible 1
+setLayerPreference allM1Cont -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM2Cont -isVisible 1
+setLayerPreference allM6Cont -isVisible 0
+setLayerPreference allM3 -isVisible 0
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+deselectAll
+selectVia 2.3700 5.0700 2.5400 5.1900 3 VSS
+setLayerPreference allM2 -isVisible 1
+setLayerPreference allM3Cont -isVisible 0
+zoomBox 1.535 4.685 3.04 5.69
+setLayerPreference allM1Cont -isVisible 1
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM3Cont -isVisible 1
+setLayerPreference allM3 -isVisible 1
+zoomBox 1.535 4.685 3.04 5.69
+setLayerPreference allM2 -isVisible 0
+setLayerPreference allM2Cont -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM1 -isVisible 0
+deselectAll
+selectWire 0.4200 5.0700 2.4800 5.1900 3 VSS
+deleteSelectedFromFPlan
+selectMarker 2.0350 5.1850 2.5400 5.1900 3 1 6
+deleteSelectedFromFPlan
+zoomBox 0.8825 14.7775 3.0925 15.8875
+zoomBox 0.8825 14.7775 3.0925 15.8875
+selectInst FILLER_impl0_6
+setLayerPreference allM1Cont -isVisible 0
+setLayerPreference allM0 -isVisible 0
+setLayerPreference allM6 -isVisible 0
+setLayerPreference allM3 -isVisible 0
+setLayerPreference allM3 -isVisible 1
+setLayerPreference allM3Cont -isVisible 0
+setLayerPreference allM3Cont -isVisible 1
+setLayerPreference allM3Cont -isVisible 0
+deselectAll
+selectInst g4673
+deselectAll
+selectMarker 1.4350 15.3300 2.5400 15.3350 3 1 6
+deleteSelectedFromFPlan
+zoomBox -0.5 1.21 0.5 2.21
+zoomBox -0.5 1.21 0.5 2.21
+setLayerPreference allM0 -isVisible 1
+setLayerPreference allM1Cont -isVisible 1
+setLayerPreference allM1 -isVisible 1
+setLayerPreference allM2Cont -isVisible 1
+selectWire 0.0000 1.6500 22.2000 1.7700 1 VSS
+deselectAll
+selectWire 0.0000 1.6500 22.2000 1.7700 1 VSS
+deselectAll
+selectWire 0.0000 1.6500 22.2000 1.7700 1 VSS
+deselectAll
+selectWire 0.0000 1.6500 22.2000 1.7700 1 VSS
+zoomBox -0.5 11.47 0.5 12.47
+zoomBox -0.5 11.47 0.5 12.47
+deselectAll
+selectWire 0.0000 11.9100 22.2000 12.0300 1 VSS
+zoomBox -0.5 8.05 0.5 9.05
+zoomBox -0.5 8.05 0.5 9.05
+deselectAll
+selectWire 0.0000 8.4900 22.2000 8.6100 1 VSS
+deselectAll
+selectWire 0.0000 8.4900 22.2000 8.6100 1 VSS
+zoomBox -0.5 8.05 0.5 9.05
+deselectAll
+zoomBox -0.5 1.21 0.5 2.21
+zoomBox -0.5 1.21 0.5 2.21
+selectWire 0.0000 1.6500 22.4000 1.7700 1 VSS
+deselectAll
+selectWire 0.0000 1.6500 22.4000 1.7700 1 VSS
+deselectAll
+selectWire -0.1200 1.6500 22.2800 1.7700 1 VSS
+deselectAll
+selectWire -0.1200 1.6500 22.2800 1.7700 1 VSS
+setLayerPreference allM1Cont -isVisible 0
+setLayerPreference allM1 -isVisible 0
+setLayerPreference allM1Cont -isVisible 1
+deselectAll
+windowSelect -0.037 1.738 0.064 1.677
+windowSelect -0.152 1.772 0.039 1.654
+setLayerPreference allM1 -isVisible 1
+zoomBox -0.5 1.21 0.5 2.21
+zoomBox -0.5 11.47 0.5 12.47
+zoomBox -0.5 11.47 0.5 12.47
+panCenter 21.966 16.676
+windowSelect 22.211 16.990 22.181 16.811
+windowSelect 22.193 16.657 22.192 16.642
+panCenter 22.192 16.679
+panCenter 22.204 16.942
+panCenter 22.189 15.422
+zoomBox -0.5 1.21 0.5 2.21
+zoomBox -0.5 1.21 0.5 2.21
+selectWire -0.1200 1.6500 22.2800 1.7700 1 VSS
+deselectAll
+selectWire -0.1200 1.6500 22.2800 1.7700 1 VSS
+deselectAll
+selectWire -0.1200 1.6500 22.2800 1.7700 1 VSS
+deselectAll
+selectWire -0.1200 1.6500 22.2800 1.7700 1 VSS
+deselectAll
+selectWire -0.1200 1.6500 21.6800 1.7700 1 VSS
+deselectAll
+panCenter 0.122 1.319
+setLayerPreference allM2 -isVisible 1
+setLayerPreference allM3Cont -isVisible 1
+setLayerPreference allM4Cont -isVisible 1
+setLayerPreference allM4 -isVisible 1
+setLayerPreference allM5Cont -isVisible 1
+setLayerPreference allM5 -isVisible 1
+setLayerPreference allM6Cont -isVisible 1
+setLayerPreference allM6 -isVisible 1
+setVerifyGeometryMode -area { 0 0 0 0 } -minWidth true -minSpacing true -minArea true -sameNet true -short true -overlap true -offRGrid false -offMGrid true -mergedMGridCheck true -minHole true -implantCheck true -minimumCut true -minStep true -viaEnclosure true -antenna false -insuffMetalOverlap true -pinInBlkg false -diffCellViol true -sameCellViol false -padFillerCellsOverlap true -routingBlkgPinOverlap true -routingCellBlkgOverlap true -regRoutingOnly false -stackedViasOnRegNet false -wireExt true -useNonDefaultSpacing false -maxWidth true -maxNonPrefLength -1 -error 1000
+verifyGeometry
+setVerifyGeometryMode -area { 0 0 0 0 }
+zoomBox 9.365 1.84 10.435 2.91
+zoomBox 9.365 1.84 10.435 2.91
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setNanoRouteMode -quiet -timingEngine CTE
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setPlaceMode -fp false
+placeDesign -inPlaceOpt
+encMessage warning 0
+encMessage debug 0
+encMessage info 0
+restoreDesign /ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/PnR/P2Blender.enc.dat P2Blender
+setDrawView fplan
+encMessage warning 1
+encMessage debug 0
+encMessage info 1
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site CoreSite -r 0.769230769231 0.5 0.0 0.0 0.0 0.0
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -r 0.664899257688 0.500016 0.0 0.0 0.0 0.0
+uiSetTool select
+getIoFlowFlag
+fit
+getIoFlowFlag
+setIoFlowFlag 0
+floorPlan -site CoreSite -r 0.664899257688 0.500016 3 3 3 3
+uiSetTool select
+getIoFlowFlag
+fit
+setIoFlowFlag 0
+floorPlan -site CoreSite -r 0.664899257688 0.500016 3.0 3.04 3.0 3.0
+uiSetTool select
+getIoFlowFlag
+fit
+saveDesign P2Blender2.enc
+saveDesign P2Blender2.enc
+addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -type core_rings -jog_distance 0.6 -threshold 0.6 -nets {VDD VSS} -follow core -stacked_via_bottom_layer Metal1 -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 1 -spacing 0.25 -offset 0.6
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1 Metal11 } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1 Metal11 } -allowLayerChange 1 -nets { VDD VSS } -blockPin useLef -targetViaLayerRange { Metal1 Metal11 }
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -xleft_offset 2 -xright_offset 3 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -width 0.22 -nets {VDD VSS} -stacked_via_bottom_layer Metal1
+set sprCreateIeStripeNets {}
+set sprCreateIeStripeLayers {}
+set sprCreateIeStripeWidth 10.0
+set sprCreateIeStripeSpacing 2.0
+set sprCreateIeStripeThreshold 1.0
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -set_to_set_distance 100 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -width 0.22 -nets {VDD VSS} -stacked_via_bottom_layer Metal1
+selectWire 5.4200 0.1900 5.6400 24.7000 2 VSS
+deleteSelectedFromFPlan
+selectWire 5.0000 1.4400 5.2200 23.4500 2 VDD
+deleteSelectedFromFPlan
+selectWire 3.4200 0.1900 3.6400 24.7000 2 VSS
+deselectAll
+selectWire 3.4200 0.1900 3.6400 24.7000 2 VSS
+deleteSelectedFromFPlan
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -stop_x 11 -width 0.22 -nets {VDD VSS} -start_x 3 -stacked_via_bottom_layer Metal1
+addStripe -skip_via_on_wire_shape Noshape -block_ring_top_layer_limit Metal3 -max_same_layer_jog_length 0.44 -padcore_ring_bottom_layer_limit Metal1 -number_of_sets 1 -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -padcore_ring_top_layer_limit Metal3 -spacing 0.2 -merge_stripes_value 0.6 -layer Metal2 -block_ring_bottom_layer_limit Metal1 -stop_x 11 -width 0.22 -nets {VDD VSS} -start_x 3 -stacked_via_bottom_layer Metal1
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType start -spacing 0.2 -start 0.0 0.0 -pin clk
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType start -spacing 0.2 -start 0.0 0.0 -pin {{Mode[0]} {Mode[1]} {Mode[2]} {Mode[3]} {Mode[4]}}
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType start -spacing 0.2 -start 0.0 0.0 -pin reset
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType start -spacing 0.2 -start 0.0 0.0 -pin {{y[0]} {y[1]}}
+setPinAssignMode -pinEditInBatch false
+editPin -pinWidth 0.06 -pinDepth 0.335 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 1 -spreadType start -spacing 0.38 -start 0.0 1.995 -pin {{y[0]} {y[1]}}
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setNanoRouteMode -quiet -droutePostRouteWidenWireRule LEFSpecialRouteSpec
+setPlaceMode -reset
+setPlaceMode -congEffort auto -timingDriven 1 -modulePlan 1 -clkGateAware 1 -powerDriven 0 -ignoreScan 1 -reorderScan 1 -ignoreSpare 0 -placeIOPins 0 -moduleAwareSpare 0 -checkPinLayerForAccess {  1 } -preserveRouting 0 -rmAffectedRouting 0 -checkRoute 0 -swapEEQ 0
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setPlaceMode -fp false
+placeDesign -inPlaceOpt
+setDrawView place
+setNanoRouteMode -quiet -drouteStartIteration default
+setNanoRouteMode -quiet -routeTopRoutingLayer default
+setNanoRouteMode -quiet -routeBottomRoutingLayer default
+setNanoRouteMode -quiet -drouteEndIteration default
+setNanoRouteMode -quiet -routeWithTimingDriven false
+setNanoRouteMode -quiet -routeWithSiDriven false
+routeDesign -globalDetail
+setVerifyGeometryMode -area { 0 0 0 0 } -minWidth true -minSpacing true -minArea true -sameNet true -short true -overlap true -offRGrid false -offMGrid true -mergedMGridCheck true -minHole true -implantCheck true -minimumCut true -minStep true -viaEnclosure true -antenna false -insuffMetalOverlap true -pinInBlkg false -diffCellViol true -sameCellViol false -padFillerCellsOverlap true -routingBlkgPinOverlap true -routingCellBlkgOverlap true -regRoutingOnly false -stackedViasOnRegNet false -wireExt true -useNonDefaultSpacing false -maxWidth true -maxNonPrefLength -1 -error 1000
+verifyGeometry
+setVerifyGeometryMode -area { 0 0 0 0 }
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+setNanoRouteMode -quiet -routeWithTimingDriven 1
+setNanoRouteMode -quiet -drouteStartIteration default
+setNanoRouteMode -quiet -routeTopRoutingLayer default
+setNanoRouteMode -quiet -routeBottomRoutingLayer default
+setNanoRouteMode -quiet -drouteEndIteration default
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven false
+routeDesign -globalDetail
+encMessage warning 0
+encMessage debug 0
+encMessage info 0
+restoreDesign /ubc/ece/home/ugrads/v/v6d9/ELEC402/Modelsim_50995133/ELEC402/PnR/P2Blender2.enc.dat P2Blender
+setDrawView fplan
+encMessage warning 1
+encMessage debug 0
+encMessage info 1
+addRing -skip_via_on_wire_shape Noshape -skip_via_on_pin Standardcell -stacked_via_top_layer Metal11 -type core_rings -jog_distance 0.6 -threshold 0.6 -nets {VDD VSS} -follow core -stacked_via_bottom_layer Metal1 -layer {bottom Metal1 top Metal1 right Metal2 left Metal2} -width 1 -spacing 0.25 -offset 0.6
+sroute -connect { blockPin padPin padRing corePin floatingStripe } -layerChangeRange { Metal1 Metal11 } -blockPinTarget { nearestTarget } -padPinPortConnect { allPort oneGeom } -padPinTarget { nearestTarget } -corePinTarget { firstAfterRowEnd } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -allowJogging 1 -crossoverViaLayerRange { Metal1 Metal11 } -allowLayerChange 1 -nets { VDD VSS } -blockPin useLef -targetViaLayerRange { Metal1 Metal11 }
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 7 -spreadType start -spacing 0.2 -start 0.0 0.0 -pin clk
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 9 -spreadType start -spacing 0.2 -start 0.0 0.0 -pin {{Mode[0]} {Mode[1]} {Mode[2]} {Mode[3]} {Mode[4]}}
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 5 -spreadType start -spacing 0.2 -start 0.0 0.0 -pin reset
+setPinAssignMode -pinEditInBatch false
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 9 -spreadType start -spacing 0.2 -start 0.0 0.0 -pin {{y[0]} {y[1]}}
+setPinAssignMode -pinEditInBatch false
+editPin -pinWidth 0.08 -pinDepth 0.25 -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side Left -layer 9 -spreadType start -spacing 0.38 -start 0.0 0.285 -pin {{y[0]} {y[1]}}
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setNanoRouteMode -quiet -droutePostRouteWidenWireRule LEFSpecialRouteSpec
+setPlaceMode -reset
+setPlaceMode -congEffort auto -timingDriven 1 -modulePlan 1 -clkGateAware 1 -powerDriven 0 -ignoreScan 1 -reorderScan 1 -ignoreSpare 0 -placeIOPins 0 -moduleAwareSpare 0 -checkPinLayerForAccess {  1 } -preserveRouting 0 -rmAffectedRouting 0 -checkRoute 0 -swapEEQ 0
+setEndCapMode -reset
+setEndCapMode -boundary_tap false
+setPlaceMode -fp false
+placeDesign -inPlaceOpt
+panCenter 8.794 11.500
+setDrawView place
+getMultiCpuUsage -localCpu
+verify_drc -report P2Blender.drc.rpt -limit 1000
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+setNanoRouteMode -quiet -routeWithTimingDriven 1
+setNanoRouteMode -quiet -drouteStartIteration default
+setNanoRouteMode -quiet -routeTopRoutingLayer default
+setNanoRouteMode -quiet -routeBottomRoutingLayer default
+setNanoRouteMode -quiet -drouteEndIteration default
+setNanoRouteMode -quiet -routeWithTimingDriven true
+setNanoRouteMode -quiet -routeWithSiDriven false
+routeDesign -globalDetail
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+setVerifyGeometryMode -area { 0 0 0 0 } -minWidth true -minSpacing true -minArea true -sameNet true -short true -overlap true -offRGrid false -offMGrid true -mergedMGridCheck true -minHole true -implantCheck true -minimumCut true -minStep true -viaEnclosure true -antenna false -insuffMetalOverlap true -pinInBlkg false -diffCellViol true -sameCellViol false -padFillerCellsOverlap true -routingBlkgPinOverlap true -routingCellBlkgOverlap true -regRoutingOnly false -stackedViasOnRegNet false -wireExt true -useNonDefaultSpacing false -maxWidth true -maxNonPrefLength -1 -error 1000
+verifyGeometry
+setVerifyGeometryMode -area { 0 0 0 0 }
+setLayerPreference violation -isVisible 1
+violationBrowser -all -no_display_false
+verifyConnectivity -type all -error 1000 -warning 50
+rcOut -setload P2Blender.setload -rc_corner rcWorst
+rcOut -setres P2Blender.setres -rc_corner rcWorst
+rcOut -spf P2Blender.spf -rc_corner rcWorst
+rcOut -spef P2Blender.spef -rc_corner rcWorst
+write_sdf P2Blender.sdf
+saveDesign P2Blender3.enc
+streamOut ./out/P2Blender.gds -mapFile /in/gds2.map -libName DesignLib -units 1000 -mode ALL
+streamOut ./out/P2Blender.gds -mapFile ./in/gds2.map -libName DesignLib -units 1000 -mode ALL
+getFillerMode -quiet
+addFiller -cell FILL8 FILL64 FILL4 FILL32 FILL2 FILL16 FILL1 DECAP10 DECAP9 DECAP8 DECAP7 DECAP6 DECAP5 DECAP4 DECAP3 DECAP2 -prefix FILLER
+panCenter 13.917 12.799
+panCenter 3.134 13.247
+panCenter 19.309 9.955
+panCenter 18.509 10.909
+panCenter 17.130 14.924
+getFillerMode -quiet
+panCenter 7.693 17.371
+panCenter 13.373 10.561
+getFillerMode -quiet
+saveDesign P2BlenderFilled.enc
+streamOut ./out/P2Blender.gds -mapFile ./in/gds2.map -libName DesignLib -units 1000 -mode ALL
+selectInst g4650
+streamOut ./out/P2Blender.gds -mapFile ./in/gds2.map -libName DesignLib -units 1000 -mode ALL
+streamOut ./out/P2Blender.gds -mapFile ./in/gds2.map -libName DesignLib -units 1000 -mode ALL
+streamOut ./out/P2Blender.gds -mapFile ./in/gds2.map -libName DesignLib -units 1000 -mode ALL
+rcOut -setload P2Blender.setload -rc_corner rcWorst
+rcOut -setres P2Blender.setres -rc_corner rcWorst
+rcOut -spf P2Blender.spf -rc_corner rcWorst
+rcOut -spef P2Blender.spef -rc_corner rcWorst
+write_sdf P2Blender.sdf
+rcOut -setload P2Blender.setload -rc_corner rcWorst
+rcOut -setres P2Blender.setres -rc_corner rcWorst
+rcOut -spf P2Blender.spf -rc_corner rcWorst
+rcOut -spef P2Blender.spef -rc_corner rcWorst
+write_sdf P3Blender.sdf

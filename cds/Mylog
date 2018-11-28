@@ -45482,3 +45482,10 @@
 \r t
 \# Memory report: Maximum memory size now 15,305 MB at UTC 2018.11.24 06:56:21.553
 \# Memory report: Maximum memory size now 15,606 MB at UTC 2018.11.24 07:06:11.569
+\a hiQuit()
+\p > 
+\a hiDBoxOK(hiQuitDBox)
+\r t
+\o 
+\# Memory report: on exit            827 MB, process size 1,648 MB at UTC 2018.11.24 07:27:49.022
+\# Memory report: peak usage         837 MB, process size 1,658 MB

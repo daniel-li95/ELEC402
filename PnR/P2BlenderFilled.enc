@@ -1,0 +1,1 @@
+restoreDesign [file dirname [file normalize [info script]]]/P2BlenderFilled.enc.dat P2Blender

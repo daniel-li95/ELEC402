@@ -1,0 +1,237 @@
+Checking out Encounter license ...
+[11/23 23:35:23     0s] Virtuoso_Digital_Implem 14.1 license checkout succeeded.
+[11/23 23:35:30     0s] 	Maximum number of instance allowed (1 x 50000).
+[11/23 23:35:30     0s] SGN Version : 10.10-p122 (27-Nov-2013) (64 bit executable)
+[11/23 23:35:30     0s] This Encounter release has been compiled with OA version 22.43-p033.
+[11/23 23:35:32     0s] 
+[11/23 23:35:33     1s] *******************************************************************
+*   Copyright (c)  Cadence Design Systems, Inc.  1996 - 2014.     *
+*                     All rights reserved.                        *
+*                                                                 *
+*                                                                 *
+*                                                                 *
+* This program contains confidential and trade secret information *
+* of Cadence Design Systems, Inc. and is protected by copyright   *
+* law and international treaties.  Any reproduction, use,         *
+* distribution or disclosure of this program or any portion of it,*
+* or any attempt to obtain a human-readable version of this       *
+* program, without the express, prior written consent of          *
+* Cadence Design Systems, Inc., is strictly prohibited.           *
+*                                                                 *
+*                 Cadence Design Systems, Inc.                    *
+*                    2655 Seely Avenue                            *
+*                   San Jose, CA 95134,  USA                      *
+*                                                                 *
+*                                                                 *
+*******************************************************************
+
+[11/23 23:35:36     3s] @(#)CDS: Encounter v14.13-s036_1 (64bit) 08/14/2014 18:19 (Linux 2.6)
+[11/23 23:35:36     3s] @(#)CDS: NanoRoute v14.13-s019 NR140805-0429/14_13-UB (database version 2.30, 237.6.1) {superthreading v1.19}
+[11/23 23:35:36     3s] @(#)CDS: CeltIC v14.13-s013_1 (64bit) 08/14/2014 12:47:36 (Linux 2.6.18-194.el5)
+[11/23 23:35:36     3s] @(#)CDS: AAE 14.13-s010 (64bit) 08/14/2014 (Linux 2.6.18-194.el5)
+[11/23 23:35:36     3s] @(#)CDS: CTE 14.13-s011_1 (64bit) Aug 14 2014 10:00:19 (Linux 2.6.18-194.el5)
+[11/23 23:35:36     3s] @(#)CDS: CPE v14.13-s029
+[11/23 23:35:36     3s] @(#)CDS: IQRC/TQRC 13.2.0-s451 (64bit) Tue Jul 22 19:06:40 PDT 2014 (Linux 2.6.18-194.el5)
+[11/23 23:35:36     3s] --- Starting "Encounter v14.13-s036_1" on Fri Nov 23 23:35:36 2018 (mem=100.7M) ---
+[11/23 23:35:36     3s] --- Running on ssh-soc (x86_64 w/Linux 2.6.32-696.20.1.el6.x86_64) ---
+[11/23 23:35:36     3s] This version was compiled on Thu Aug 14 18:19:25 PDT 2014.
+[11/23 23:35:36     3s] Set DBUPerIGU to 1000.
+[11/23 23:35:36     3s] Set net toggle Scale Factor to 1.00
+[11/23 23:35:36     3s] Set Shrink Factor to 1.00000
+[11/23 23:35:36     3s] 
+[11/23 23:35:36     3s] **INFO:  MMMC transition support version v31-84 
+[11/23 23:35:36     3s] 
+[11/23 23:35:36     3s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[11/23 23:35:36     3s] <CMD> suppressMessage ENCEXT-2799
+[11/23 23:35:36     3s] <CMD> getVersion
+[11/23 23:35:36     3s] <CMD> win
+[11/23 23:35:37     3s] <CMD> save_global Default.globals
+[11/23 23:40:52    22s] <CMD> set init_gnd_net VSS
+[11/23 23:40:56    22s] <CMD> set init_lef_file {in/gsclib045_macro.lef in/gsclib045_multibitsDFF.lef in/gsclib045_tech.lef}
+[11/23 23:40:56    22s] <CMD> set init_verilog in/P2Blender_map.v
+[11/23 23:40:56    22s] <CMD> set init_mmmc_file in/MMMC.tcl
+[11/23 23:40:56    22s] <CMD> set init_top_cell TopBlender
+[11/23 23:40:56    22s] <CMD> set init_pwr_net VDD
+[11/23 23:40:56    22s] <CMD> init_design
+[11/23 23:40:56    22s] 
+[11/23 23:40:56    22s] Loading LEF file in/gsclib045_macro.lef ...
+[11/23 23:40:56    22s] **ERROR: (ENCLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[11/23 23:40:56    22s] **ERROR: (ENCLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[11/23 23:40:56    22s] **ERROR: (ENCLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[11/23 23:40:56    22s] **ERROR: (ENCLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[11/23 23:40:56    22s] **ERROR: (ENCLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[11/23 23:40:56    22s] **ERROR: (ENCLF-53):	The layer 'Metal1' referenced in pin 'CON' in macro 'ACHCONX2' is not found in the database. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+[11/23 23:40:56    22s] Type 'man ENCLF-53' for more detail.
+[11/23 23:40:56    22s] **ERROR: (ENCLF-3):	Error found when processing LEF file 'in/gsclib045_macro.lef'. The subsequent file content is ignored. Refer to error messages above for details. Fix the errors, and restart 'Encounter' again.
+[11/23 23:40:56    22s] Type 'man ENCLF-3' for more detail.
+[11/23 23:40:56    22s] **ERROR: (ENCLF-26):	No technology information is defined in the first LEF file.
+[11/23 23:40:56    22s] Please rearrange the LEF file order and make sure the technology LEF file is the
+[11/23 23:40:56    22s] first one, exit and restart Encounter.
+[11/23 23:40:56    22s] **ERROR: (ENCLF-26):	No technology information is defined in the first LEF file.
+[11/23 23:40:56    22s] Please rearrange the LEF file order and make sure the technology LEF file is the
+[11/23 23:40:56    22s] first one, exit and restart Encounter.
+[11/23 23:40:56    22s] **ERROR: **ERROR: (ENCSYT-16013):	Loading LEF file(s) failed, and has aborted. Refer to error messages above for details. Fix the errors, and restart again.
+[11/23 23:41:00    23s] 
+[11/23 23:41:00    23s] <CMD> set init_gnd_net VSS
+[11/23 23:41:50    36s] <CMD> set init_lef_file {in/gsclib045_macro.lef in/gsclib045_multibitsDFF.lef in/gsclib045_tech.lef}
+[11/23 23:41:50    36s] <CMD> set init_verilog in/P2Blender_map.v
+[11/23 23:41:50    36s] <CMD> set init_mmmc_file in/MMMC.tcl
+[11/23 23:41:50    36s] <CMD> set init_top_cell TopBlender
+[11/23 23:41:50    36s] <CMD> set init_pwr_net VDD
+[11/23 23:41:50    36s] <CMD> init_design
+[11/23 23:41:50    36s] **WARN: (ENCSE-100):	report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/23 23:41:50    36s] INFO: New setup and hold views overwrite old settings during design initialization
+[11/23 23:41:50    36s] 
+[11/23 23:41:50    36s] Loading LEF file in/gsclib045_macro.lef ...
+[11/23 23:41:50    36s] **WARN: (ENCLF-58):	MACRO 'ACHCONX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:41:50    36s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:41:50    36s] Type 'man ENCLF-58' for more detail.
+[11/23 23:41:50    36s] **ERROR: (ENCLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[11/23 23:41:50    36s] **ERROR: (ENCLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[11/23 23:41:50    36s] **ERROR: (ENCLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[11/23 23:41:50    36s] **ERROR: (ENCLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[11/23 23:41:50    36s] **ERROR: (ENCLF-328):	The layer 'Metal1' specified in macro pin 'ACHCONX2.CON' does not exist
+[11/23 23:41:50    36s] **WARN: (ENCLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'A' can be added for existing macro.
+[11/23 23:41:50    36s] **WARN: (ENCLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'B' can be added for existing macro.
+[11/23 23:41:50    36s] **WARN: (ENCLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'CI' can be added for existing macro.
+[11/23 23:41:50    36s] **WARN: (ENCLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'VSS' can be added for existing macro.
+[11/23 23:41:50    36s] **WARN: (ENCLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'VDD' can be added for existing macro.
+[11/23 23:41:50    36s] **ERROR: (ENCLF-53):	The layer 'Metal1' referenced in pin 'VSS' in macro 'ADDFHX1' is not found in the database. A layer must be defined in the LEF technology LAYER section before it can be referenced from a macro. Review the LEF files specified in the init_lef_file variable to see if the layer does not exist or is specified after the one that defines the macro.
+[11/23 23:41:50    36s] Type 'man ENCLF-53' for more detail.
+[11/23 23:41:50    36s] **ERROR: (ENCLF-3):	Error found when processing LEF file 'in/gsclib045_macro.lef'. The subsequent file content is ignored. Refer to error messages above for details. Fix the errors, and restart 'Encounter' again.
+[11/23 23:41:50    36s] Type 'man ENCLF-3' for more detail.
+[11/23 23:41:50    36s] **ERROR: (ENCLF-26):	No technology information is defined in the first LEF file.
+[11/23 23:41:50    36s] Please rearrange the LEF file order and make sure the technology LEF file is the
+[11/23 23:41:50    36s] first one, exit and restart Encounter.
+[11/23 23:41:50    36s] **WARN: (ENCLF-61):	1 duplicated MACRO definitions have been found in the LEF file(s). Their content except DENSITY and PIN ANTENNA* data have been ignored.
+[11/23 23:41:50    36s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:41:50    36s] Type 'man ENCLF-61' for more detail.
+[11/23 23:41:50    36s] **ERROR: (ENCLF-26):	No technology information is defined in the first LEF file.
+[11/23 23:41:50    36s] Please rearrange the LEF file order and make sure the technology LEF file is the
+[11/23 23:41:50    36s] first one, exit and restart Encounter.
+[11/23 23:41:50    36s] **ERROR: **ERROR: (ENCSYT-16013):	Loading LEF file(s) failed, and has aborted. Refer to error messages above for details. Fix the errors, and restart again.
+[11/23 23:41:53    37s] 
+[11/23 23:41:53    37s] <CMD> set init_gnd_net VSS
+[11/23 23:42:10    42s] <CMD> set init_lef_file {in/gsclib045_tech.lef in/gsclib045_macro.lef in/gsclib045_multibitsDFF.lef}
+[11/23 23:42:10    42s] <CMD> set init_verilog in/P2Blender_map.v
+[11/23 23:42:10    42s] <CMD> set init_mmmc_file in/MMMC.tcl
+[11/23 23:42:10    42s] <CMD> set init_top_cell TopBlender
+[11/23 23:42:10    42s] <CMD> set init_pwr_net VDD
+[11/23 23:42:10    42s] <CMD> init_design
+[11/23 23:42:10    42s] **WARN: (ENCSE-100):	report_message: '-start_cmd/-end_cmd' can not be nested. Interior calls do nothing. Ignore.
+[11/23 23:42:10    42s] INFO: New setup and hold views overwrite old settings during design initialization
+[11/23 23:42:10    42s] 
+[11/23 23:42:10    42s] Loading LEF file in/gsclib045_tech.lef ...
+[11/23 23:42:10    42s] **WARN: (ENCLF-155):	ViaRule only supports routing/cut layer, but poly layer found for viaRule 'M1_PO', 
+[11/23 23:42:10    42s] **WARN: (ENCLF-155):	ViaRule only supports routing/cut layer, but poly layer found for viaRule 'M1_DIFF', 
+[11/23 23:42:10    42s] **WARN: (ENCLF-155):	ViaRule only supports routing/cut layer, but poly layer found for viaRule 'M1_PSUB', 
+[11/23 23:42:10    42s] **WARN: (ENCLF-155):	ViaRule only supports routing/cut layer, but poly layer found for viaRule 'M1_PIMP', 
+[11/23 23:42:10    42s] **WARN: (ENCLF-155):	ViaRule only supports routing/cut layer, but poly layer found for viaRule 'M1_NIMP', 
+[11/23 23:42:10    42s] **WARN: (ENCLF-155):	ViaRule only supports routing/cut layer, but poly layer found for viaRule 'M1_NWELL', 
+[11/23 23:42:10    42s] 
+[11/23 23:42:10    42s] Loading LEF file in/gsclib045_macro.lef ...
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'ACHCONX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'A' can be added for existing macro.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'B' can be added for existing macro.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'CI' can be added for existing macro.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'VSS' can be added for existing macro.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ACHCONX2' has been found in db, no extra pin 'VDD' can be added for existing macro.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'ADDFHX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ADDFHX1' has been found in db, no extra pin 'VDD' can be added for existing macro.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ADDFHX1' has been found in db, no extra pin 'CI' can be added for existing macro.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ADDFHX1' has been found in db, no extra pin 'A' can be added for existing macro.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ADDFHX1' has been found in db, no extra pin 'B' can be added for existing macro.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ADDFHX1' has been found in db, no extra pin 'CO' can be added for existing macro.
+[11/23 23:42:10    42s] **WARN: (ENCLF-209):	Cell 'ADDFHX1' has been found in db, no extra pin 'S' can be added for existing macro.
+[11/23 23:42:10    42s] 
+[11/23 23:42:10    42s] Loading LEF file in/gsclib045_multibitsDFF.lef ...
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'DFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'DFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'DFF2X1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'DFF2X2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'DFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'DFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'DFF4X1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'DFF4X2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'SDFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'SDFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'SDFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'SDFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'SPDFF2RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'SPDFF2RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'SPDFF4RX1' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-58):	MACRO 'SPDFF4RX2' has been found in the database. Its content except DENSITY and PIN ANTENNA* data will be ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-58' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-61):	18 duplicated MACRO definitions have been found in the LEF file(s). Their content except DENSITY and PIN ANTENNA* data have been ignored.
+[11/23 23:42:10    42s] Review the LEF files specified in the init_lef_file variable and remove redundant definitions.
+[11/23 23:42:10    42s] Type 'man ENCLF-61' for more detail.
+[11/23 23:42:10    42s] **WARN: (ENCLF-200):	Pin 'A' in macro 'ANTENNA' has no ANTENNAGATEAREA value defined. The library data is incomplete and some process antenna rules will not be checked correctly.
+[11/23 23:42:10    42s] Type 'man ENCLF-200' for more detail.
+[11/23 23:42:10    42s] 
+[11/23 23:42:10    42s] viaInitial starts at Fri Nov 23 23:42:10 2018
+viaInitial ends at Fri Nov 23 23:42:10 2018
+*** Begin netlist parsing (mem=391.3M) ***
+[11/23 23:42:10    42s] Reading netlist ...
+[11/23 23:42:10    42s] Backslashed names will retain backslash and a trailing blank character.
+[11/23 23:42:10    42s] Reading verilog netlist 'in/P2Blender_map.v'
+[11/23 23:42:10    42s] 
+[11/23 23:42:10    42s] *** Memory Usage v#1 (Current mem = 392.301M, initial mem = 100.688M) ***
+[11/23 23:42:10    42s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=392.3M) ***
+[11/23 23:42:10    42s] **ERROR: (ENCSYC-300):	Cell TopBlender not found.
+[11/23 23:42:10    42s] **ERROR: (ENCVL-904):	Can't set top cell to "TopBlender" because it does not exist.  Exiting Encounter!
+[11/23 23:42:10    42s] 
+[11/23 23:42:15    44s] *** Memory Usage v#1 (Current mem = 392.301M, initial mem = 100.688M) ***
+[11/23 23:42:15    44s] 
+[11/23 23:42:15    44s] *** Summary of all messages that are not suppressed in this session:
+[11/23 23:42:15    44s] Severity  ID               Count  Summary                                  
+[11/23 23:42:15    44s] ERROR     ENCLF-3              2  Error found when processing LEF file '%s...
+[11/23 23:42:15    44s] ERROR     ENCLF-26             4  No technology information is defined in ...
+[11/23 23:42:15    44s] ERROR     ENCLF-53             2  The layer '%s' referenced %s is not foun...
+[11/23 23:42:15    44s] WARNING   ENCLF-58            19  MACRO '%s' has been found in the databas...
+[11/23 23:42:15    44s] WARNING   ENCLF-61             2  %d duplicated MACRO definitions have bee...
+[11/23 23:42:15    44s] WARNING   ENCLF-155            6  ViaRule only supports routing/cut layer,...
+[11/23 23:42:15    44s] WARNING   ENCLF-200            1  Pin '%s' in macro '%s' has no ANTENNAGAT...
+[11/23 23:42:15    44s] WARNING   ENCLF-209           16  Cell '%s' has been found in db, no extra...
+[11/23 23:42:15    44s] ERROR     ENCLF-328           10  The layer '%s' specified in macro pin '%...
+[11/23 23:42:15    44s] WARNING   ENCSE-100            2  report_message: '-start_cmd/-end_cmd' ca...
+[11/23 23:42:15    44s] ERROR     ENCSYC-300           1  Cell %s not found.                       
+[11/23 23:42:15    44s] ERROR     ENCVL-904            1  Can't set top cell to "%s" because it do...
+[11/23 23:42:15    44s] *** Message Summary: 46 warning(s), 20 error(s)
+[11/23 23:42:15    44s] 
+[11/23 23:42:15    44s] --- Ending "Encounter" (totcpu=0:00:44.1, real=0:06:52, mem=392.3M) ---
+[11/23 23:42:15    44s] 

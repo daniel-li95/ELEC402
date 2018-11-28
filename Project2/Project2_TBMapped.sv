@@ -26,12 +26,12 @@ end
 
 always 
 begin
-#10 clk_tb = ~clk_tb; // The clock cycle being an order of magnitude faster than the mode change allows for it to cycle through every state at least twice.
+#1 clk_tb = ~clk_tb; // The clock cycle being an order of magnitude faster than the mode change allows for it to cycle through every state at least twice.
 end
 
 always
 begin 
-#400 BlendMode = BlendMode +1; // The counting up of the mode allows for the cycling through the modes
+#5 BlendMode = BlendMode +1; // The counting up of the mode allows for the cycling through the modes
 end 
 
 endmodule
